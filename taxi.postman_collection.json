@@ -1,0 +1,2803 @@
+{
+	"info": {
+		"_postman_id": "c79cb990-8004-4669-ab8e-105d8a67083d",
+		"name": "taxi",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these request types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a variable called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Tests\" tab**\n\nTests help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/b5f280a7-4b09-48ec-857f-0a7ed99d7ef8/U2NyZWVuc2hvdCAyMDIzLTAzLTI3IGF0IDkuNDcuMjggUE0ucG5n\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n- Add more scripts in \"Tests\" to verify if the API works as expected and execute flows.\n    \n\n## ℹ️ Resources\n\n[Building requests](https://learning.postman.com/docs/sending-requests/requests/)  \n[Authorizing requests](https://learning.postman.com/docs/sending-requests/authorization/)  \n[Using variables](https://learning.postman.com/docs/sending-requests/variables/)  \n[Managing environments](https://learning.postman.com/docs/sending-requests/managing-environments/)  \n[Writing scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26128944"
+	},
+	"item": [
+		{
+			"name": "Register_200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"Оля\",\r\n    \"last_name\": \"Шишкина\",\r\n    \"phone\": \"+71112223345\",\r\n    \"password\": \"PAssWord1*\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/register",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register_422",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"Оля\",\r\n    \"last_name\": \"Шишкина\",\r\n    \"phone\": \"+71112223344123456789\",\r\n    \"password\": \"PAssWord1*\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/register",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login_200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"+71112223344\",\r\n    \"password\": \"PAssWord1*\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/login",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login_401",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"+72222223344\",\r\n    \"password\": \"PAssWord1*\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/login",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login_422",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"+72222223344123456789\",\r\n    \"password\": \"PAssWord1*\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/login",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account_200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnXHJRnjSU43",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/account",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account_401",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnXHJ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/account",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Phone_change_200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnXHJRnjSU43",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"+71231231122\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/phone_change",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"phone_change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Phone_change_401",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnX",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"+71231231122\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/phone_change",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"phone_change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Phone_change_422",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnXHJRnjSU43",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/phone_change",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"phone_change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Catalog_200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/catalog",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"catalog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Card_200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/catalog/5",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"catalog",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Card_404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/catalog/10",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"catalog",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order_create_200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "zJHZzseohMzgW9NWG03nrBAIJXU4niFiW00UTVZt3LXcjYqSEEbyqX0cnxDlGitSN61Hpn2FkEx6CMEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"1\",\r\n    \"tariff_id\": \"1\",\r\n    \"options\": \"с питомцем\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/order_create",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"order_create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order_create_401",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "zJHZzseohMzgW9NWG03nrBAIJXU4niFiW00UTVZt3LXcjYqSEEbyqX0cnxDlGitSN61Hpn2FkEx",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"1\",\r\n    \"tariff_id\": \"1\",\r\n    \"options\": \"с питомцем\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/order_create",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"order_create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order_create_422",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "zJHZzseohMzgW9NWG03nrBAIJXU4niFiW00UTVZt3LXcjYqSEEbyqX0cnxDlGitSN61Hpn2FkEx6CMEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"1\",\r\n    \"tariff_id\": \"10\",\r\n    \"options\": \"с питомцем\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/order_create",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"order_create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order_delete_200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "zJHZzseohMzgW9NWG03nrBAIJXU4niFiW00UTVZt3LXcjYqSEEbyqX0cnxDlGitSN61Hpn2FkEx6CMEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/order_delete/5",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"order_delete",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order_delete_401",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "zJHZzseohMzgW9NWG03nrBAIJXU4niFiW00UTVZt3LXcjYqSEEbyqX0cnxDlGitSN61H",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/order_delete/2",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"order_delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order_delete_403",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "zJHZzseohMzgW9NWG03nrBAIJXU4niFiW00UTVZt3LXcjYqSEEbyqX0cnxDlGitSN61Hpn2FkEx6CMEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/order_delete/2",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"order_delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order_delete_404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "zJHZzseohMzgW9NWG03nrBAIJXU4niFiW00UTVZt3LXcjYqSEEbyqX0cnxDlGitSN61Hpn2FkEx6CMEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/order_delete/20",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"order_delete",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Status_change_200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnXHJRnjSU43",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status_order\": \"Подтвержден\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/status_change/2",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"status_change",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Status_change_401",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnX",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status_order\": \"Выполнен\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/status_change/3",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"status_change",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Status_change_403",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "zJHZzseohMzgW9NWG03nrBAIJXU4niFiW00UTVZt3LXcjYqSEEbyqX0cnxDlGitSN61Hpn2FkEx6CMEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status_order\": \"Выполнен\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/status_change/3",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"status_change",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Status_change_422",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnXHJRnjSU43",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status_order\": \"Подтвержденный\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/status_change/2",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"status_change",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tariff_create_200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnXHJRnjSU43",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "photo",
+						"value": "multipart/form-data",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name_tariff",
+							"value": "Детский",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/D:/Users/User/Desktop/img/taxi.png"
+						},
+						{
+							"key": "price_min",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/tariff_create",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"tariff_create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tariff_create_401",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnX",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "photo",
+						"value": "multipart/form-data",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name_tariff",
+							"value": "Детский",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/D:/Users/User/Desktop/img/taxi.png"
+						},
+						{
+							"key": "price_min",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/tariff_create",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"tariff_create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tariff_create_403",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "zJHZzseohMzgW9NWG03nrBAIJXU4niFiW00UTVZt3LXcjYqSEEbyqX0cnxDlGitSN61Hpn2FkEx6CMEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "photo",
+						"value": "multipart/form-data",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name_tariff",
+							"value": "Детский",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/D:/Users/User/Desktop/img/taxi.png"
+						},
+						{
+							"key": "price_min",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/tariff_create",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"tariff_create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tariff_create_422",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnXHJRnjSU43",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "photo",
+						"value": "multipart/form-data",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name_tariff",
+							"value": "Детский",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/D:/Users/User/Desktop/img/taxi.png"
+						},
+						{
+							"key": "price_min",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "дополнительный",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/tariff_create",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"tariff_create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tariff_delete_200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful DELETE request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnXHJRnjSU43",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/tariff_delete/5",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"tariff_delete",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tariff_delete_401",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful DELETE request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnX",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/tariff_delete/4",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"tariff_delete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tariff_delete_403",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful DELETE request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "zJHZzseohMzgW9NWG03nrBAIJXU4niFiW00UTVZt3LXcjYqSEEbyqX0cnxDlGitSN61Hpn2FkEx6CMEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/tariff_delete/4",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"tariff_delete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tariff_delete_404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful DELETE request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnXHJRnjSU43",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/tariff_delete/10",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"tariff_delete",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tariff_change_200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnXHJRnjSU43",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "photo",
+						"value": "multipart/form-data",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name_tariff",
+							"value": "Свадебное",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/D:/Users/User/Desktop/img/taxi2.jpeg"
+						},
+						{
+							"key": "price_min",
+							"value": "27",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/tariff_change/6",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"tariff_change",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tariff_change_401",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnX",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "photo",
+						"value": "multipart/form-data",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name_tariff",
+							"value": "Свадебное",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/D:/Users/User/Desktop/img/taxi2.jpeg"
+						},
+						{
+							"key": "price_min",
+							"value": "27",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/tariff_change/5",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"tariff_change",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tariff_change_403",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "zJHZzseohMzgW9NWG03nrBAIJXU4niFiW00UTVZt3LXcjYqSEEbyqX0cnxDlGitSN61Hpn2FkEx6CMEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "photo",
+						"value": "multipart/form-data",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name_tariff",
+							"value": "Свадебное",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/D:/Users/User/Desktop/img/taxi2.jpeg"
+						},
+						{
+							"key": "price_min",
+							"value": "27",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/tariff_change/5",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"tariff_change",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tariff_change_422",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnXHJRnjSU43",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "photo",
+						"value": "multipart/form-data",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name_tariff",
+							"value": "Свадебное",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/D:/Users/User/Desktop/img/taxi2.txt"
+						},
+						{
+							"key": "price_min",
+							"value": "27",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/tariff_change/5",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"tariff_change",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tariff_change_404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnXHJRnjSU43",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "photo",
+						"value": "multipart/form-data",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name_tariff",
+							"value": "Свадебное",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/D:/Users/User/Desktop/img/taxi2.jpeg"
+						},
+						{
+							"key": "price_min",
+							"value": "27",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/tariff_change/20",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"tariff_change",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category_create_200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnXHJRnjSU43",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name_category\": \"Премиум+\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/category_create",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"category_create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category_create_401",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnX",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name_category\": \"Доставка\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/category_create",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"category_create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category_create_403",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "zJHZzseohMzgW9NWG03nrBAIJXU4niFiW00UTVZt3LXcjYqSEEbyqX0cnxDlGitSN61Hpn2FkEx6CMEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name_category\": \"Доставка\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/category_create",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"category_create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category_create_422",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnXHJRnjSU43",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Доставка\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/category_create",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"category_create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category_delete_200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnXHJRnjSU43",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Доставка\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/category_delete/4",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"category_delete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category_delete_401",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnX",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Доставка\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/category_delete/3",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"category_delete",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category_delete_403",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "zJHZzseohMzgW9NWG03nrBAIJXU4niFiW00UTVZt3LXcjYqSEEbyqX0cnxDlGitSN61Hpn2FkEx6CMEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Доставка\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/category_delete/3",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"category_delete",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category_delete_404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O8CVpJ3LauMtcpe4T-Mfkn8oK7r2dm4OEJIUPj-75nQvEc35i5YoT4Bhkt-dtozq2n46fnXHJRnjSU43",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Доставка\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "k-leskina.xn--80ahdri7a.site/api/category_delete/13",
+					"host": [
+						"k-leskina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"category_delete",
+						"13"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
